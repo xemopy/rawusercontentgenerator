@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Github RawUserContent Link Generator</title>
+
+        <meta name="description" content="Generate raw.githubusercontent.com links easily from Github repository URLs.">
+        <meta name="keywords" content="Github, RawUserContent, link generator, Github tools, raw content, URL generator">
+        <meta name="author" content="cyber-lua">
+
+        <meta property="og:title" content="Github RawUserContent Link Generator">
+        <meta property="og:description" content="Generate raw.githubusercontent.com links easily from Github repository URLs.">
+        <meta property="og:url" content="https://cyber-lua.github.io/rawusercontentgenerator">
+        <meta property="og:type" content="website">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Github RawUserContent Link Generator">
+        <meta name="twitter:description" content="Generate raw.githubusercontent.com links easily from Github repository URLs.">
+
+        <meta property="og:site_name" content="Github RawUserContent Link Generator">
+        <meta property="og:title" content="Github RawUserContent Link Generator">
+        <meta property="og:description" content="Generate raw.githubusercontent.com links easily from Github repository URLs.">
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #121212;
+                color: #ffffff;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 600px;
+                margin: 50px auto;
+                background: #1e1e1e;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                border-radius: 8px;
+            }
+
+            h1 {
+                text-align: center;
+                color: #ffffff;
+            }
+
+            .input-field {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #444;
+                border-radius: 4px;
+                background-color: #2e2e2e;
+                color: #ffffff;
+                box-sizing: border-box;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color: #28a745;
+                color: #ffffff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            button:hover {
+                background-color: #218838;
+            }
+
+            .result {
+                margin-top: 20px;
+                padding: 10px;
+                background: #333;
+                border-radius: 4px;
+                word-wrap: break-word;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Github RawUserContent Link Generator</h1>
+            <input type="text" id="githubUsername" class="input-field" placeholder="Enter Github username">
+            <input type="text" id="repositoryName" class="input-field" placeholder="Enter repository name">
+            <input type="text" id="filePath" class="input-field" placeholder="Enter file path">
+            <button onclick="generateLink()">Generate Raw Link</button>
+            <div class="result" id="result"></div>
+        </div>
+
+        <script>
+            function generateLink() {
+                const username = document.getElementById('githubUsername').value;
+                const repo = document.getElementById('repositoryName').value;
+                const path = document.getElementById('filePath').value;
+                const rawUrl = `https://raw.githubusercontent.com/${username}/${repo}/main/${path}`;
+                document.getElementById('result').innerText = rawUrl;
+            }
+        </script>
+    </body>
+</html>
